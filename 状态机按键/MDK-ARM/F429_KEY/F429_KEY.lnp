@@ -1,0 +1,28 @@
+--cpu Cortex-M4.fp
+"f429_key\startup_stm32f429xx.o"
+"f429_key\key.o"
+"f429_key\main.o"
+"f429_key\gpio.o"
+"f429_key\tim.o"
+"f429_key\stm32f4xx_it.o"
+"f429_key\stm32f4xx_hal_msp.o"
+"f429_key\stm32f4xx_hal_tim.o"
+"f429_key\stm32f4xx_hal_tim_ex.o"
+"f429_key\stm32f4xx_hal_rcc.o"
+"f429_key\stm32f4xx_hal_rcc_ex.o"
+"f429_key\stm32f4xx_hal_flash.o"
+"f429_key\stm32f4xx_hal_flash_ex.o"
+"f429_key\stm32f4xx_hal_flash_ramfunc.o"
+"f429_key\stm32f4xx_hal_gpio.o"
+"f429_key\stm32f4xx_hal_dma_ex.o"
+"f429_key\stm32f4xx_hal_dma.o"
+"f429_key\stm32f4xx_hal_pwr.o"
+"f429_key\stm32f4xx_hal_pwr_ex.o"
+"f429_key\stm32f4xx_hal_cortex.o"
+"f429_key\stm32f4xx_hal.o"
+"f429_key\stm32f4xx_hal_exti.o"
+"f429_key\system_stm32f4xx.o"
+--strict --scatter "F429_KEY\F429_KEY.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "F429_KEY.map" -o F429_KEY\F429_KEY.axf
