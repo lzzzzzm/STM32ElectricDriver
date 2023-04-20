@@ -1,78 +1,77 @@
-# 电子设计驱动
+# <center>  STM32 Projects Demo  </center>
 
-## 介绍
+## **Introduction**
 
-本仓库存放电子设计竞赛中常用模块驱动代码及其使用移植使用方法。
+This repo contains my demo projects when I learned how to use STM32 MCU, the projects is mainly based on the board of STM32F103, STM32F407 and STM32F429.
 
-本仓库代码有可能为基于STM32F103，STM32F407或STM32F429所创建，但均会编写移植方法。（如果有空的话）
+## **Inroduction of the demos**
 
-## 本仓库已有代码介绍
+The demo in this repo is not easily to transfer to other mcu, but it can be regarded as a demonstration when you learn the knowledge of its.
 
-***下面是对本仓库的一些说明***
+If the demo has some bugs, please pull issues to make me know !
 
-里面的代码并没有做到比较好的移植性，但可以作为学习代码来学习，如果有BUG，可以QQ联系我：529641220
-日后有时间，应该会整理代码，并且做移植性参考。
+**1. DC encoder motor(直流编码器电机)**
 
-**1. 直流编码器电机**
+	This code develop on STM32F103
 
-	此代码基于F103单片机进行编写。
+	A demonstration of how to use the DC encoder motor and utlize the data of encoder to control the speed and angle of motor with PID algorithm.
 
-	主要完成对于直流电机编码器的读取功能，并且可以基于编码器信息的读取，进行PID的单级速度及串级PID的位置控制
+	Reference blog：https://blog.csdn.net/lzzzzzzm/article/details/119479331
 
-	具体参考博客：https://blog.csdn.net/lzzzzzzm/article/details/119479331
+**2. Ultrasound driver(超声波驱动)**
 
-**2. 超声波驱动**
+	This code develop on STM32F103
 
-	此代码基于F103单片机进行编写。
+	A demonstration of how to use Ultrasound to capture the distance data, it mainly based on the knowledge of input capture.
 
-	主要完成对于超声波模块的距离读取功能。
+	Reference blog：https://blog.csdn.net/lzzzzzzm/article/details/119538532?spm=1001.2014.3001.5502
 
-	具体参考博客：https://blog.csdn.net/lzzzzzzm/article/details/119538532?spm=1001.2014.3001.5502
+**3. Load cells(称重传感器)**
 
-**3. 称重传感器**
+	This code develop on STM32F429
 
-	此代码基于F429单片机进行编写
+	A demonstration of how to use the Load cells, it mainly based on the knowledge of IIC. In this demo, we show the data from load cells with LCD.
 
-	主要完成对于市面上一般称重传感器+HX711使用，并且里面附带LCD屏幕的显示功能，可完成实时显示称重传感器信息的功能。
+	Reference blog：https://blog.csdn.net/lzzzzzzm/article/details/117406040?spm=1001.2014.3001.5502
 
-	具体参考博客：https://blog.csdn.net/lzzzzzzm/article/details/117406040?spm=1001.2014.3001.5502
+**4. PS2 driver(PS2手柄驱动)**
 
-**4. PS2手柄驱动**
+	This code develop on STM32F407
 
-	此代码基于F407单片机进行编写
+	A demonstration of how to use the PS2.
 
-	主要完成对于PS2手柄信号的读取，可以实时读取手柄发出的信息，作为二次开发的驱动。
+	Reference blog：None
 
-**5. JY901驱动**
+**5. JY901 gyroscope driver(JY901陀螺仪驱动)**
 	
-	此代码基于F407单片机进行编写
+	This code develop on STM32F407
 
-	主要完成对于JY901中数据的解码，根据上位机的设置，来获取不同位对应的值，便于二次开发。
+	A demonstration of how to decoder the data from JY901 gyroscope.
 
-	具体参考博客：https://blog.csdn.net/lzzzzzzm/article/details/119573194#comments_20948534
+	Reference blog: https://blog.csdn.net/lzzzzzzm/article/details/119573194#comments_20948534
 
-**6. 状态机按键**
+**6. Scan keys based on state(状态机按键)**
 
-	此代码基于F429单片机进行编写
+	This code develop on STM32F429
 
-	主要完成利用状态机的思想，对按键的长短按，连按等方式进行读取。
+	A demonstration of how to utilize the idea of state to scan keys, and it is a demo of long pressing, short pressing and nomal shoting.
 
-	具体参考博客：https://blog.csdn.net/lzzzzzzm/article/details/119605913#comments_21029191
+	Reference blog：https://blog.csdn.net/lzzzzzzm/article/details/119605913#comments_21029191
 
-**7. HC-05蓝牙接收**
+**7. HC-05 bule tooth(HC-05蓝牙接收)**
 
-	此代码基于F429单片机进行编写
+	This code develop on STM32F429
 
-	主要完成蓝牙基础接收操作，其中接收部分采用DMA接收
+	A demonstration of how to process the data from blue tooth, it mainly based on the knowledge of USART and DMA.
 
-	具体参考博客：https://blog.csdn.net/lzzzzzzm/article/details/114916509#comments_22376606
+	Reference blog：https://blog.csdn.net/lzzzzzzm/article/details/114916509#comments_22376606
 
-**8. OpenMV通信**
+**8. STM32 community with OpenMV(32与openmv通信)**
 
-	此代码基于F429单片机进行编写
+	This code develop on STM32F429
 
-	主要完成通过DMA串口和OpenMV进行通信，其主要部分和蓝牙接收使用同一套逻辑。有关openmv部分的代码，详见博客。
+	A demonstration of how to communicate with openmv, it mainly based on the knowledge of USART and DMA. The code of openmv can be found in the blob.
 
-	具体参考博客：https://blog.csdn.net/lzzzzzzm/article/details/117711579
+	Reference blog：https://blog.csdn.net/lzzzzzzm/article/details/117711579
 
 
